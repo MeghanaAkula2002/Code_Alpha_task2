@@ -1,0 +1,24 @@
+function calculateAge() {
+  // Get user input for date of birth
+  var dobInput = prompt("Enter your date of birth (YYYY-MM-DD):");
+
+  // Create a Date object from the input value
+  var dob = new Date(dobInput);
+
+  // Get the current date
+  var currentDate = new Date();
+
+  // Calculate the difference in years
+  var age = currentDate.getFullYear() - dob.getFullYear();
+
+  // Check if the birthday has occurred this year
+  if (currentDate.getMonth() < dob.getMonth() || (currentDate.getMonth() === dob.getMonth() && currentDate.getDate() < dob.getDate())) {
+    age--;
+  }
+
+  // Display the result
+  alert('Your age is: ' + age + ' years');
+}
+
+// Call the function to start the age calculation
+calculateAge();
